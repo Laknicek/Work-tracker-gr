@@ -1,0 +1,6 @@
+{
+  "name": "Work Tracker GR",
+  "description": "Track Greek private sector vacation days and bonuses with a futuristic 2026 UI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
