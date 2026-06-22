@@ -43,6 +43,18 @@ export default function App() {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (mounted) {
+      const langNames: Record<Language, string> = {
+        el: 'Ελληνικά',
+        tr: 'Türkçe',
+        en: 'English'
+      };
+      const activeLangName = langNames[user.language] || 'Ελληνικά';
+      document.title = `Work Tracker GR - ${activeLangName}`;
+    }
+  }, [user.language, mounted]);
+
   if (!mounted) return <div className="min-h-screen bg-neutral-950" />;
 
   const handleCompleteOnboarding = (profileData: Omit<UserProfile, 'onboardingComplete'>) => {
