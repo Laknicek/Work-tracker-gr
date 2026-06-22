@@ -24,6 +24,14 @@ const defaultProfile: UserProfile = {
   oaedStartDate: null,
   firstHalfAmount: null,
   paymentHistory: [],
+  specialLeaves: {
+    marriage: 0,
+    paternity: 0,
+    bereavement: 0,
+    schoolVisit: 0,
+    bloodDonation: 0,
+    sickLeave: 0,
+  },
 };
 
 export default function App() {

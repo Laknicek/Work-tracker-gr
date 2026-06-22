@@ -4,6 +4,7 @@ import { UserProfile, Language } from '../types';
 import { useTranslation } from '../i18n';
 import { Globe, ArrowRight, Briefcase } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { CustomDatePicker } from './CustomDatePicker';
 
 // Animated Input component for character-by-character typing effect
 const AnimatedInput = ({ value, onChange, placeholder, type = "text", autoFocus = false }: {
@@ -228,11 +229,11 @@ export function Onboarding({ onComplete, lang, setLang }: OnboardingProps) {
                   <div className="space-y-4">
                     <label className="block text-sm font-medium text-neutral-300">{t.startDate}</label>
                     <div className="text-xs text-neutral-500 mb-2">{t.dypaHint}</div>
-                    <input
-                      type="date"
+                    <CustomDatePicker
                       value={formData.startDate}
-                      onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                      className="w-full bg-neutral-950/50 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#00ffcc] transition-all font-sans [color-scheme:dark] focus:ring-1 focus:ring-[#00ffcc]"
+                      onChange={(value) => setFormData({ ...formData, startDate: value })}
+                      placeholder={t.startDate}
+                      lang={formData.language}
                     />
                   </div>
 
@@ -330,11 +331,11 @@ export function Onboarding({ onComplete, lang, setLang }: OnboardingProps) {
                     <>
                       <div className="space-y-4 pt-4 border-t border-neutral-800">
                         <label className="block text-sm font-medium text-neutral-300">{t.oaedStartDate}</label>
-                        <input
-                          type="date"
+                        <CustomDatePicker
                           value={formData.oaedStartDate}
-                          onChange={(e) => setFormData({ ...formData, oaedStartDate: e.target.value })}
-                          className="w-full bg-neutral-950/50 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#00ffcc] transition-all font-sans [color-scheme:dark] focus:ring-1 focus:ring-[#00ffcc]"
+                          onChange={(value) => setFormData({ ...formData, oaedStartDate: value })}
+                          placeholder={t.oaedStartDate}
+                          lang={formData.language}
                         />
                       </div>
 
@@ -420,7 +421,7 @@ export function Onboarding({ onComplete, lang, setLang }: OnboardingProps) {
                 disabled={!isStepValid()}
                 className="group flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-neutral-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {step === 4 ? t.start : 'Next'}
+                {step === 4 ? t.start : t.next}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>

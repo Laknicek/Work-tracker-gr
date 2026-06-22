@@ -20,6 +20,14 @@ export interface UserProfile {
   firstHalfAmount: number | null;
   paymentHistory: string[];
   plannedVacationDuration?: number;
+  specialLeaves?: {
+    marriage?: number;
+    paternity?: number;
+    bereavement?: number;
+    schoolVisit?: number;
+    bloodDonation?: number;
+    sickLeave?: number;
+  };
 }
 
 export interface CalculationResults {

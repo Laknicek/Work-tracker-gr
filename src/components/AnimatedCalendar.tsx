@@ -251,7 +251,7 @@ export function AnimatedCalendar({ user, bonusDates }: AnimatedCalendarProps) {
                         <span className="text-emerald-400 font-medium flex items-center gap-1">
                           <DollarSign className="w-3 h-3" /> {t.predictedPayment}
                         </span>
-                        <span className="text-neutral-400 block mt-1">{info.predictedPayment.chance}% chance</span>
+                        <span className="text-neutral-400 block mt-1">{info.predictedPayment.chance}% {t.chance}</span>
                       </div>
                     );
                   }
